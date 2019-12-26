@@ -7,6 +7,7 @@ import { environment } from '@environments/environment';
   templateUrl: './value.component.html',
   styleUrls: ['./value.component.css']
 })
+
 export class ValueComponent implements OnInit {
 
   values: any;
