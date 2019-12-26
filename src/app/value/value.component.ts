@@ -9,8 +9,8 @@ import { environment } from '@environments/environment';
 })
 export class ValueComponent implements OnInit {
 
-  values : any;
-  api : string;
+  values: any;
+  api: string;
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
