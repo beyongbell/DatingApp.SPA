@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from '@service/auth.service';
+
+import { ErrorInterceptorProvider } from './Interceptor/error.interceptor';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './layouts/nav/nav.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
+
 
 @NgModule({
    declarations: [
@@ -22,7 +24,7 @@ import { RegisterComponent } from './pages/register/register.component';
       FormsModule
    ],
    providers: [
-     AuthService
+    ErrorInterceptorProvider
    ],
    bootstrap: [
       AppComponent
