@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from '@environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  registerMode = false;
+  values: any;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.getValues();
+  }
+
+  registerToggle() {
+    this.registerMode = !this.registerMode;
+  }
+
+  getValues() {
+    this.http.get(environment.api3 + 'values').subscribe(response => {
+      this.values = response;
+      console.log(response);
+    }, error => {
+      console.log(error);
+    });
   }
 
 }
