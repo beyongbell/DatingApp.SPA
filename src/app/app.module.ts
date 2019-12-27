@@ -5,23 +5,32 @@ import { FormsModule } from '@angular/forms';
 
 import { ErrorInterceptorProvider } from './Interceptor/error.interceptor';
 
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
+
 import { AppComponent } from './app.component';
 import { NavComponent } from './layouts/nav/nav.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
-
+import { MemberListComponent } from './pages/member-list/member-list.component';
+import { ListsComponent } from './pages/lists/lists.component';
+import { MessagesComponent } from './pages/messages/messages.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       NavComponent,
       HomeComponent,
-      RegisterComponent
+      RegisterComponent,
+      MemberListComponent,
+      ListsComponent,
+      MessagesComponent
    ],
    imports: [
       BrowserModule,
       HttpClientModule,
-      FormsModule
+      FormsModule,
+      RouterModule.forRoot(appRoutes)
    ],
    providers: [
     ErrorInterceptorProvider
