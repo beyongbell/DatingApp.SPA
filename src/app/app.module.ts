@@ -12,9 +12,10 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './layouts/nav/nav.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { MemberListComponent } from './pages/member-list/member-list.component';
+import { MemberListComponent } from './pages/members/member-list/member-list.component';
 import { ListsComponent } from './pages/lists/lists.component';
 import { MessagesComponent } from './pages/messages/messages.component';
+import { MemberCardComponent } from './pages/members/member-card/member-card.component';
 
 @NgModule({
    declarations: [
@@ -24,7 +25,8 @@ import { MessagesComponent } from './pages/messages/messages.component';
       RegisterComponent,
       MemberListComponent,
       ListsComponent,
-      MessagesComponent
+      MessagesComponent,
+      MemberCardComponent
    ],
    imports: [
       BrowserModule,
