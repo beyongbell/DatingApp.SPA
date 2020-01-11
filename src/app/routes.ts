@@ -1,14 +1,17 @@
 import { AuthGuard } from './guards/auth.guard';
 import { Routes } from '@angular/router';
 
-import { ListsComponent } from './pages/lists/lists.component';
-import { MessagesComponent } from './pages/messages/messages.component';
-import { MemberListComponent } from './pages/members/member-list/member-list.component';
-import { HomeComponent } from './pages/home/home.component';
-import { MemberDetailComponent } from '@page/members/member-detail/member-detail.component';
+import { MemberListResolver } from '@resolver/member-list.resolver';
+import { MemberDetailResolver } from '@resolver/member-detail.resolver';
+import { MemberEditResolver } from '@resolver/member-edit.resolver';
 
-import { MemberDetailResolver } from './resolvers/member-detail.resolver';
-import { MemberListResolver } from './resolvers/member-list.resolver';
+import { ListsComponent } from '@page/lists/lists.component';
+import { MessagesComponent } from '@page/messages/messages.component';
+import { MemberListComponent } from '@page/members/member-list/member-list.component';
+import { HomeComponent } from '@page/home/home.component';
+import { MemberDetailComponent } from '@page/members/member-detail/member-detail.component';
+import { MemberEditComponent } from '@page/members/member-edit/member-edit.component';
+
 
 export const appRoutes: Routes = [
    { path: '', component: HomeComponent },
@@ -19,6 +22,7 @@ export const appRoutes: Routes = [
       children : [
         { path: 'members',      component: MemberListComponent   , resolve: { users : MemberListResolver  } },
         { path: 'members/:id',  component: MemberDetailComponent , resolve: { user  : MemberDetailResolver} },
+        { path: 'member/edit',  component: MemberEditComponent   , resolve: { user  : MemberEditResolver  } },
         { path: 'messages',     component: MessagesComponent },
         { path: 'lists',        component: ListsComponent },
       ]

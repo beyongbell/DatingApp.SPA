@@ -4,6 +4,7 @@
     "baseUrl": "src",
     "paths": {
       "@interface/*": ["app/interfaces/*"],
+      "@resolver/*": ["app/resolvers/*"],
       "@page/*": ["app/pages/*"],
       "@service/*": ["app/services/*"],
       "@environments/*": ["environments/*"]

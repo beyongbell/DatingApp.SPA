@@ -12,8 +12,9 @@ import { ErrorInterceptorProvider } from './Interceptor/error.interceptor';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 
-import { MemberDetailResolver } from './resolvers/member-detail.resolver';
-import { MemberListResolver } from './resolvers/member-list.resolver';
+import { MemberListResolver } from '@resolver/member-list.resolver';
+import { MemberDetailResolver } from '@resolver/member-detail.resolver';
+import { MemberEditResolver } from '@resolver/member-edit.resolver';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './layouts/nav/nav.component';
@@ -24,6 +25,7 @@ import { ListsComponent } from './pages/lists/lists.component';
 import { MessagesComponent } from './pages/messages/messages.component';
 import { MemberCardComponent } from './pages/members/member-card/member-card.component';
 import { MemberDetailComponent } from './pages/members/member-detail/member-detail.component';
+import { MemberEditComponent } from './pages/members/member-edit/member-edit.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -46,7 +48,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
       ListsComponent,
       MessagesComponent,
       MemberCardComponent,
-      MemberDetailComponent
+      MemberDetailComponent,
+      MemberEditComponent
    ],
    imports: [
       BrowserModule,
@@ -66,6 +69,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
     ErrorInterceptorProvider,
     MemberListResolver,
     MemberDetailResolver,
+    MemberEditResolver,
     { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
    ],
    bootstrap: [
