@@ -18,7 +18,7 @@ import { MemberListComponent } from './pages/members/member-list/member-list.com
 import { ListsComponent } from './pages/lists/lists.component';
 import { MessagesComponent } from './pages/messages/messages.component';
 import { MemberCardComponent } from './pages/members/member-card/member-card.component';
-
+import { MemberDetailComponent } from './pages/members/member-detail/member-detail.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -33,7 +33,8 @@ export function tokenGetter() {
       MemberListComponent,
       ListsComponent,
       MessagesComponent,
-      MemberCardComponent
+      MemberCardComponent,
+      MemberDetailComponent
    ],
    imports: [
       BrowserModule,
