@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { JwtModule } from '@auth0/angular-jwt';
+
 import { ErrorInterceptorProvider } from './Interceptor/error.interceptor';
 
 import { RouterModule } from '@angular/router';
@@ -16,6 +18,11 @@ import { MemberListComponent } from './pages/members/member-list/member-list.com
 import { ListsComponent } from './pages/lists/lists.component';
 import { MessagesComponent } from './pages/messages/messages.component';
 import { MemberCardComponent } from './pages/members/member-card/member-card.component';
+
+
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
 
 @NgModule({
    declarations: [
@@ -32,7 +39,14 @@ import { MemberCardComponent } from './pages/members/member-card/member-card.com
       BrowserModule,
       HttpClientModule,
       FormsModule,
-      RouterModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes),
+      JwtModule.forRoot({
+        config: {
+          tokenGetter,
+          whitelistedDomains: ['localhost:5001'],
+          blacklistedRoutes: ['localhost:5001/api/auth']
+        }
+      })
    ],
    providers: [
     ErrorInterceptorProvider
