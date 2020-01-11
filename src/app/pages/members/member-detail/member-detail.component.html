@@ -2,23 +2,23 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="card">
-      <img src="{{ user?.photoUrl }}" alt="{{ user?.knownAs }}" class="card-img-top img-thumbnail">
+      <img src="{{ user.photoUrl }}" alt="{{ user.knownAs }}" class="card-img-top img-thumbnail">
           <div class="card-body">
             <div>
               <strong>Location:</strong>
-              <p>{{ user?.city }}, {{ user?.country }}</p>
+              <p>{{ user.city }}, {{ user.country }}</p>
             </div>
             <div>
               <strong>Age:</strong>
-              <p>{{ user?.age }}</p>
+              <p>{{ user.age }}</p>
             </div>
             <div>
               <strong>Last Active:</strong>
-              <p>{{ user?.lastActive }}</p>
+              <p>{{ user.lastActive }}</p>
             </div>
             <div>
               <strong>Member Since:</strong>
-              <p>{{ user?.created }}</p>
+              <p>{{ user.created }}</p>
             </div>
           </div>
           <div class="card-footer">
@@ -32,7 +32,7 @@
     <div class="col-sm-8">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" id="about-tab" data-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="true">About {{ user?.knownAs }}</a>
+            <a class="nav-link active" id="about-tab" data-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="true">About {{ user.knownAs }}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="interests-tab" data-toggle="tab" href="#interests" role="tab" aria-controls="interests" aria-selected="false"> Interests </a>
@@ -47,13 +47,13 @@
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
               <h4>Description</h4>
-              <p>{{ user?.introduction }}</p>
+              <p>{{ user.introduction }}</p>
               <h4>Looking For</h4>
-              <p>{{ user?.lookingFor }}</p>
+              <p>{{ user.lookingFor }}</p>
           </div>
           <div class="tab-pane fade" id="interests" role="tabpanel" aria-labelledby="interests-tab">
               <h4>Interests</h4>
-              <p>{{ user?.interests }}</p>
+              <p>{{ user.interests }}</p>
           </div>
           <div class="tab-pane fade" id="photos" role="tabpanel" aria-labelledby="photos-tab">
             <p> Photos will go here </p>

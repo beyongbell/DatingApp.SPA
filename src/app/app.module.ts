@@ -10,6 +10,9 @@ import { ErrorInterceptorProvider } from './Interceptor/error.interceptor';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 
+import { MemberDetailResolver } from './resolvers/member-detail.resolver';
+import { MemberListResolver } from './resolvers/member-list.resolver';
+
 import { AppComponent } from './app.component';
 import { NavComponent } from './layouts/nav/nav.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -50,7 +53,9 @@ export function tokenGetter() {
       })
    ],
    providers: [
-    ErrorInterceptorProvider
+    ErrorInterceptorProvider,
+    MemberListResolver,
+    MemberDetailResolver
    ],
    bootstrap: [
       AppComponent
