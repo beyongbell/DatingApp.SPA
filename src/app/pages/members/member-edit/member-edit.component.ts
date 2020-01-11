@@ -1,6 +1,6 @@
 import { AlertifyService } from '@service/alertify.service';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { User } from '@interface/user';
 import { NgForm } from '@angular/forms';
 
@@ -11,11 +11,18 @@ import { NgForm } from '@angular/forms';
 })
 export class MemberEditComponent implements OnInit {
 
-  @ViewChild('editForm', { static: true}) editForm: NgForm;
+  constructor(private route: ActivatedRoute, private alertifyService: AlertifyService) { }
 
   user: User;
 
-  constructor(private route: ActivatedRoute, private alertifyService: AlertifyService) { }
+  @ViewChild('editForm', { static: true}) editForm: NgForm;
+
+  @HostListener('window:beforeunload', ['$event'])
+  unloadNotification($event: any) {
+    if (this.editForm.dirty) {
+      $event.returnValue = true;
+    }
+  }
 
   ngOnInit() {
     this.route.data.subscribe(data => {

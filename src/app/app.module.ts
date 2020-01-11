@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { PreventUnsavedChanges } from './guards/prevent-unsaved-changes.guard';
+
 import { JwtModule } from '@auth0/angular-jwt';
 
 import { NgxGalleryModule } from 'ngx-gallery';
@@ -70,6 +72,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
     MemberListResolver,
     MemberDetailResolver,
     MemberEditResolver,
+    PreventUnsavedChanges,
     { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
    ],
    bootstrap: [
