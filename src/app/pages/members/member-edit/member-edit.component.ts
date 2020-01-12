@@ -1,4 +1,6 @@
 import { AlertifyService } from '@service/alertify.service';
+import { AuthService } from '@service/auth.service';
+import { UserService } from '@service/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { User } from '@interface/user';
@@ -11,7 +13,12 @@ import { NgForm } from '@angular/forms';
 })
 export class MemberEditComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private alertifyService: AlertifyService) { }
+  constructor(
+      private route: ActivatedRoute,
+      private alertifyService: AlertifyService,
+      private userService: UserService,
+      private authService: AuthService
+  ) { }
 
   user: User;
 
@@ -31,9 +38,12 @@ export class MemberEditComponent implements OnInit {
   }
 
   updateUser() {
-    console.log(this.user);
-    this.alertifyService.success('Profile Updated Successfully');
-    this.editForm.reset(this.user);
+    this.userService.updateUser(this.authService.decodeToken.nameid, this.user).subscribe(next => {
+      this.alertifyService.success('Profile updated successfully');
+      this.editForm.reset(this.user);
+    }, error => {
+      this.alertifyService.error(error);
+    });
   }
 
 }
