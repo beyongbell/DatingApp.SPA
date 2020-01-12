@@ -64,7 +64,7 @@
               </form>
           </div>
           <div class="tab-pane fade" id="edit-photos" role="tabpanel" aria-labelledby="edit-photos-tab">
-              <app-photo-editor [photos]="user.photos"></app-photo-editor>
+              <app-photo-editor [photos]="user.photos" (getMemberPhotoChange)="updateMainPhoto($event)"></app-photo-editor>
           </div>
         </div>
     </div>
