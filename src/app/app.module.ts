@@ -11,6 +11,8 @@ import { NgxGalleryModule } from 'ngx-gallery';
 
 import { ErrorInterceptorProvider } from './Interceptor/error.interceptor';
 
+import { FileUploadModule } from 'ng2-file-upload';
+
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 
@@ -28,6 +30,8 @@ import { MessagesComponent } from './pages/messages/messages.component';
 import { MemberCardComponent } from './pages/members/member-card/member-card.component';
 import { MemberDetailComponent } from './pages/members/member-detail/member-detail.component';
 import { MemberEditComponent } from './pages/members/member-edit/member-edit.component';
+import { PhotoEditorComponent } from './pages/members/photo-editor/photo-editor.component';
+
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -51,13 +55,15 @@ export class CustomHammerConfig extends HammerGestureConfig {
       MessagesComponent,
       MemberCardComponent,
       MemberDetailComponent,
-      MemberEditComponent
+      MemberEditComponent,
+      PhotoEditorComponent
    ],
    imports: [
       BrowserModule,
       HttpClientModule,
       FormsModule,
       NgxGalleryModule,
+      FileUploadModule,
       RouterModule.forRoot(appRoutes),
       JwtModule.forRoot({
         config: {
