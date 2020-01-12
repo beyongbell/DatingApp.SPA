@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { User } from '@interface/user';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -14,6 +15,7 @@ export class AuthService {
 
   jwtHelper = new JwtHelperService();
   decodeToken: any;
+  currentUser: User;
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +25,9 @@ export class AuthService {
         const user = response;
         if (user) {
           localStorage.setItem('token', user.token);
+          localStorage.setItem('user', JSON.stringify(user.user));
           this.decodeToken = this.jwtHelper.decodeToken(user.token);
+          this.currentUser = user.user;
         }
       })
     );
