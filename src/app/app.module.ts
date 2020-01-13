@@ -1,7 +1,7 @@
 import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { PreventUnsavedChanges } from './guards/prevent-unsaved-changes.guard';
 
@@ -62,6 +62,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
       BrowserModule,
       HttpClientModule,
       FormsModule,
+      ReactiveFormsModule,
       NgxGalleryModule,
       FileUploadModule,
       RouterModule.forRoot(appRoutes),
