@@ -21,7 +21,7 @@
       <div *ngIf="loggedIn" class="dropdown">
         <button type="button" class="btn btn-outline-info dropdown-toggle text-light my-2" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="mr-2">
-              <img src="{{ photoUrl }}" alt="">
+              <img src="{{ photoUrl || '../../../../assets/user.png' }}" alt="">
           </span>
           Welcome {{ authService.decodeToken?.unique_name | titlecase}}
         </button>
