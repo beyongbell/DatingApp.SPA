@@ -9,7 +9,12 @@
         [disabled]="photo.isMain"
         [ngClass]="photo.isMain ? 'btn-success active' : 'btn-secondary'"
       > Main</button>
-      <button type="button" class="btn btn-sm btn-danger">
+      <button
+        type="button"
+        class="btn btn-sm btn-danger"
+        (click)="deletePhoto(photo.id)"
+        [disabled]="photo.isMain"
+      >
         <i class="fas fa-trash"></i>
       </button>
     </div>
@@ -51,13 +56,13 @@
           <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
         </div>
       </div>
-      <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+      <button type="button" class="btn btn-success btn-s mr-2" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
         <i class="fas fa-upload"></i> Upload
       </button>
-      <button type="button" class="btn btn-warning btn-s" (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
+      <button type="button" class="btn btn-warning btn-s mr-2" (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
         <i class="fas fa-ban"></i> Cancel
       </button>
-      <button type="button" class="btn btn-danger btn-s" (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+      <button type="button" class="btn btn-danger btn-s mr-2" (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
         <i class="fas fa-trash"></i> Remove
       </button>
     </div>
