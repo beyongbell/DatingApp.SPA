@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { TimeAgoPipe } from 'time-ago-pipe';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PreventUnsavedChanges } from './guards/prevent-unsaved-changes.guard';
@@ -50,6 +52,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
 
 @NgModule({
    declarations: [
+      TimeAgoPipe,
       AppComponent,
       NavComponent,
       HomeComponent,
