@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { PreventUnsavedChanges } from './guards/prevent-unsaved-changes.guard';
 
 import { JwtModule } from '@auth0/angular-jwt';
@@ -15,6 +17,8 @@ import { FileUploadModule } from 'ng2-file-upload';
 
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
+
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { MemberListResolver } from '@resolver/member-list.resolver';
 import { MemberDetailResolver } from '@resolver/member-detail.resolver';
@@ -59,6 +63,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
       PhotoEditorComponent
    ],
    imports: [
+      BrowserAnimationsModule,
+      BsDatepickerModule.forRoot(),
       BrowserModule,
       HttpClientModule,
       FormsModule,
