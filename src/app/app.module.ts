@@ -15,14 +15,16 @@ import { NgxGalleryModule } from 'ngx-gallery';
 
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
 import { ErrorInterceptorProvider } from './Interceptor/error.interceptor';
 
 import { FileUploadModule } from 'ng2-file-upload';
 
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
-
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { MemberListResolver } from '@resolver/member-list.resolver';
 import { MemberDetailResolver } from '@resolver/member-detail.resolver';
@@ -39,7 +41,6 @@ import { MemberCardComponent } from './pages/members/member-card/member-card.com
 import { MemberDetailComponent } from './pages/members/member-detail/member-detail.component';
 import { MemberEditComponent } from './pages/members/member-edit/member-edit.component';
 import { PhotoEditorComponent } from './pages/members/photo-editor/photo-editor.component';
-
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -71,6 +72,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
       BrowserAnimationsModule,
       BsDatepickerModule.forRoot(),
       PaginationModule.forRoot(),
+      ButtonsModule.forRoot(),
       BrowserModule,
       HttpClientModule,
       FormsModule,
