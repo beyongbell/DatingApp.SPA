@@ -5,6 +5,7 @@ import { Routes } from '@angular/router';
 import { MemberListResolver } from '@resolver/member-list.resolver';
 import { MemberDetailResolver } from '@resolver/member-detail.resolver';
 import { MemberEditResolver } from '@resolver/member-edit.resolver';
+import { ListResolver } from '@resolver/list.resolver';
 
 import { ListsComponent } from '@page/lists/lists.component';
 import { MessagesComponent } from '@page/messages/messages.component';
@@ -27,7 +28,7 @@ export const appRoutes: Routes = [
             canDeactivate: [PreventUnsavedChanges]
         },
         { path: 'messages',     component: MessagesComponent },
-        { path: 'lists',        component: ListsComponent },
+        { path: 'lists',        component: ListsComponent        , resolve: { users : ListResolver} },
       ]
    },
    { path: '**', redirectTo: '', pathMatch: 'full' }
