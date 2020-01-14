@@ -13,6 +13,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 
 import { NgxGalleryModule } from 'ngx-gallery';
 
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+
 import { ErrorInterceptorProvider } from './Interceptor/error.interceptor';
 
 import { FileUploadModule } from 'ng2-file-upload';
@@ -68,6 +70,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
    imports: [
       BrowserAnimationsModule,
       BsDatepickerModule.forRoot(),
+      PaginationModule.forRoot(),
       BrowserModule,
       HttpClientModule,
       FormsModule,
