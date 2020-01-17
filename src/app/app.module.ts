@@ -14,10 +14,9 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from 'ngx-gallery';
 
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
-
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 import { ErrorInterceptorProvider } from './Interceptor/error.interceptor';
 
@@ -77,6 +76,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
       BsDatepickerModule.forRoot(),
       PaginationModule.forRoot(),
       ButtonsModule.forRoot(),
+      TabsModule.forRoot(),
       BrowserModule,
       HttpClientModule,
       FormsModule,
