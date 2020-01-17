@@ -62,7 +62,7 @@
             <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
           </div>
           <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="messages-tab">
-            <p> Message will go here </p>
+            <app-member-messages [recipientId]="user.id"></app-member-messages>
           </div>
         </div>
     </div>

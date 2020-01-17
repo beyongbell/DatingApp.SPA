@@ -43,6 +43,7 @@ import { MemberCardComponent } from './pages/members/member-card/member-card.com
 import { MemberDetailComponent } from './pages/members/member-detail/member-detail.component';
 import { MemberEditComponent } from './pages/members/member-edit/member-edit.component';
 import { PhotoEditorComponent } from './pages/members/photo-editor/photo-editor.component';
+import { MemberMessagesComponent } from './pages/members/member-messages/member-messages.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -68,7 +69,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
       MemberCardComponent,
       MemberDetailComponent,
       MemberEditComponent,
-      PhotoEditorComponent
+      PhotoEditorComponent,
+      MemberMessagesComponent
    ],
    imports: [
       BrowserAnimationsModule,
