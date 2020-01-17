@@ -30,6 +30,7 @@ import { MemberListResolver } from '@resolver/member-list.resolver';
 import { MemberDetailResolver } from '@resolver/member-detail.resolver';
 import { MemberEditResolver } from '@resolver/member-edit.resolver';
 import { ListResolver } from '@resolver/list.resolver';
+import { MessagesResolver } from '@resolver/messages.resolver';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './layouts/nav/nav.component';
@@ -95,6 +96,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
     MemberDetailResolver,
     MemberEditResolver,
     ListResolver,
+    MessagesResolver,
     PreventUnsavedChanges,
     { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
    ],
