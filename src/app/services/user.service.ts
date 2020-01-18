@@ -12,7 +12,7 @@ import { Message } from '@interface/message';
 })
 export class UserService {
 
-  baseUrl = environment.api3;
+  baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 

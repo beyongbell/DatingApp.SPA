@@ -18,7 +18,7 @@ export class PhotoEditorComponent implements OnInit {
 
   uploader: FileUploader;
   hasBaseDropZoneOver = false;
-  baseUrl = environment.api3;
+  baseUrl = environment.apiUrl;
   currentMain: Photo;
 
   constructor(private authService: AuthService, private userService: UserService, private alertifyService: AlertifyService) { }

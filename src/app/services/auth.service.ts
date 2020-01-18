@@ -11,8 +11,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AuthService {
 
-  baseUrl   = environment.api3 + 'auth/';
-  baseUrl2  = environment.api2 + 'auth/';
+  baseUrl   = environment.apiUrl + 'auth/';
 
   jwtHelper = new JwtHelperService();
   decodeToken: any;
