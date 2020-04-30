@@ -22,7 +22,7 @@
     "@auth0/angular-jwt": "^3.0.1",
     "alertifyjs": "^1.13.1",
     "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng2-file-upload": "^1.4.0",
     "ngx-bootstrap": "^5.3.2",
     "ngx-gallery": "^5.10.0",
